@@ -1,0 +1,51 @@
+.f .g .h .a .b .d .e .c {
+  width: 100%;
+}
+
+.f .g .h .a .b .d .e .c .progressbar {
+  counter-reset: step;
+}
+.a .b .d .e .c .progressbar li {
+  list-style: none;
+  display: inline-block;
+  width: 20.33%;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+.f .g .h .a .b .d .e .c .progressbar li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 30px;
+  height: 30px;
+  line-height : 30px;
+  border: 3px solid #ddd;
+  border-radius: 100%;
+  display: block;
+  text-align: center;
+  margin: 0 auto 10px auto;
+  background-color: #fff;
+}
+
+.f .g .h .a .b .d .e .c .progressbar .l:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #ddd;
+  top: 15px;
+  left: -50%;
+  z-index : -1;
+}
+.f .g .h .a .b .d .e .c .progressbar li:first-child:after {
+  content: rgb(220,53,69);
+}
+.f .g .h .a .b .d .e .c .progressbar li.active {
+  color: rgb(220,53,69);
+}
+.f .g .h .a .b .d .e .c .progressbar li.active:before {
+  border-color: rgb(220,53,69);
+} 
+.f .g .h .a .b .d .e .c .progressbar li.active + li:after {
+  background-color: rgb(220,53,69);
+}
